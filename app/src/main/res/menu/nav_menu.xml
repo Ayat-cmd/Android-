@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group>
+        <item android:title="@string/nav_note" android:id="@+id/id_notes"></item>
+        <item android:title="@string/nav_cart" android:id="@+id/id_cart"></item>
+    </group>
+
+    <group>
+        <item
+            android:title="@string/nav_translate"
+            android:id="@+id/id_translate" />
+    </group>
+</menu>

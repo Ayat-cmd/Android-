@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Lab_3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_note">Заметки</string>
+    <string name="nav_cart">Корзина</string>
+    <string name="nav_translate">Поменять язык</string>
+    <string name="clear_cart">Очистить</string>
+    <string name="dialog_yes">Да</string>
+    <string name="dialog_cancel">Отмена</string>
+    <string name="dialog_restore">Нет, восстановить</string>
+    <string name="dialog_delete_note">Удалить заметку?</string>
+</resources>
