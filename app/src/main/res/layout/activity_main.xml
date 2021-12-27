@@ -5,8 +5,7 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main"
-    tools:openDrawer="start"
+    android:background="#bebebe"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -23,6 +22,8 @@
                 android:id="@+id/btn_menu"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:src="@drawable/ic_menu" />
 
             <Button
@@ -32,12 +33,23 @@
                 android:layout_marginStart="250dp"
                 android:backgroundTint="@color/color_clear"
                 android:text="@string/clear_cart" />
+            <Switch
+                android:id="@+id/switchGridOrLinear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-190dp"
+                android:padding="5dp"
+                android:background="@drawable/switch_bg"
+                android:text="@string/edit_notes"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
         </LinearLayout>
 
         <FrameLayout
             android:id="@+id/place_holder"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
 
         </FrameLayout>
 
@@ -48,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/cardview_dark_background"
+        android:background="#bebebe"
         android:paddingTop="250dp"
         app:menu="@menu/nav_menu">
 

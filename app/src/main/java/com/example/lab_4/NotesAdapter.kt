@@ -1,22 +1,23 @@
 package com.example.lab_3
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lab_3.MainActivity.Companion.colorArr
 import com.example.lab_3.MainActivity.Companion.launcher
+import kotlinx.android.synthetic.main.layout_content.*
 
-class NotesAdapter(listArray: ArrayList<ItemList>, context: Context?) : RecyclerView.Adapter<NotesAdapter.ViewHolder>() {
+class NotesAdapter(listArray: ArrayList<ItemList>, context: Context?, color: ArrayList<Int>) : RecyclerView.Adapter<NotesAdapter.ViewHolder>() {
 
     private var listArrayR = listArray
     private var contextR = context
+    private var colorR = color
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -46,9 +47,27 @@ class NotesAdapter(listArray: ArrayList<ItemList>, context: Context?) : Recycler
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val listItem = listArrayR[position]
         holder.bind(listItem, contextR)
+        when {
+            MainActivity.ind == position -> {
+                holder.itemView.setBackgroundColor(colorR[position])
+                listItem.color = colorR[position]
+            }
+            listItem.color != null -> {
+                holder.itemView.setBackgroundColor(listItem.color!!)
+            }
+            else->{
+                if(colorArr.isNotEmpty()) {
+                    holder.itemView.setBackgroundColor(colorArr[position])
+                    listItem.color = colorR[position]
+                } else {
+                    colorArr.add(Color.rgb(190,190,190))
+                }
+            }
+        }
     }
 
     override fun getItemCount(): Int {
         return listArrayR.size
     }
+
 }
